@@ -271,3 +271,4 @@ Stack trace:
 [2025-01-26 10:41:51] Este es un error de prueba.
 [2025-01-26 10:41:51] Este es un error de prueba.
 [2025-01-26 10:45:51] Este es un error de prueba.
+[2025-01-26 10:54:53] Este es un error de prueba.

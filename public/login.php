@@ -7,21 +7,20 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 global $conexion;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtener los datos enviados
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //Obtener los datos enviados
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
     try {
-        // 1. Buscar al usuario en la tabla de empleados
-        $stmt = $conexion->prepare("SELECT * FROM empleados WHERE usuario = ?");
-        $stmt->execute([$usuario]);
+        //1. Buscamos en tabla clientes.
+        $stmt = $conexion->prepare ("SELECT * FROM empleados WHERE usuario = :usuario");
+        $stmt->execute([':usuario' => $usuario]);
         $empleado = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($empleado) {
-            // Verificar la contraseña para empleado
+            //Verificar la contraseña para empleado
             if (password_verify($password, $empleado['password'])) {
-                // Iniciar sesión como empleado
                 $_SESSION['empleado'] = [
                     'id' => $empleado['id'],
                     'nombre' => $empleado['nombre'],
@@ -29,45 +28,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'puesto' => $empleado['puesto'],
                 ];
 
+                //Saludamos que siempre está bien.
                 echo "<p>¡Bienvenido empleado, " . htmlspecialchars($empleado['nombre']) . "!</p>";
-                // Redirigir a la página de empleados
-                header('Location: empleados_dashboard.php');
+                //Redirigir a la página de empleados
+                header ('Location: empleados_dashboard.php');
                 exit();
             } else {
                 echo "<p>Contraseña incorrecta para empleado.</p>";
+                header ('Location: login.php');
                 exit();
             }
         }
 
-        // 2. Buscar al usuario en la tabla de clientes
-        $stmt = $conexion->prepare("SELECT * FROM clientes WHERE usuario = ?");
-        $stmt->execute([$usuario]);
+        //2. Buscamos en tabla clientes.
+        $stmt = $conexion->prepare ("SELECT * FROM clientes WHERE usuario = :usuario");
+        $stmt->execute([':usuario' => $usuario]);
         $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
-
         if ($cliente) {
-            // Verificar la contraseña para cliente
             if (password_verify($password, $cliente['password'])) {
-                // Iniciar sesión como cliente
                 $_SESSION['cliente'] = [
                     'id' => $cliente['id'],
                     'nombre' => $cliente['nombre'],
                     'usuario' => $cliente['usuario'],
                 ];
-
+                //Saludamos por si de caso.
                 echo "<p>¡Bienvenido cliente, " . htmlspecialchars($cliente['nombre']) . "!</p>";
-                // Redirigir a la página de clientes
                 header('Location: clientes_dashboard.php');
                 exit();
             } else {
                 echo "<p>Contraseña incorrecta para cliente.</p>";
+                header ('Location: login.php');
                 exit();
             }
         }
 
-        // 3. Si no se encuentra ni en empleados ni en clientes
-        echo "<p>El usuario no existe.</p>";
+
     } catch (PDOException $e) {
         echo "<p>Error al iniciar sesión: " . $e->getMessage() . "</p>";
     }
+
 }
-?>

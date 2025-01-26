@@ -31,7 +31,7 @@ if (!isset($_SESSION['instalacion_completada'])) {
 </head>
 <body>
 <h1>Instalación Correcta</h1>
-<form action="comprobante.php" method="POST">
+<form action="login.php" method="POST">
     <label for="usuario">Usuario:</label>
     <input type="text" name="usuario" id="usuario" required>
     <br><br>
@@ -40,7 +40,5 @@ if (!isset($_SESSION['instalacion_completada'])) {
     <br><br>
     <button type="submit">Iniciar Sesión</button>
 </form>
-
-
 </body>
 </html>
