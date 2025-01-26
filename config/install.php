@@ -119,8 +119,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_POST['nombre_habitacion'],
                     true, // Por defecto, disponible
                     $_POST['capacidad_habitacion'],
-                    $_POST['numero_habitacion'],
-                    $_POST['precio_habitacion']
+                    $_POST['precio_habitacion'],
+                    $_POST['numero_habitacion']
+
                 );
                 $habitacion->guardar($conexion);
                 echo '<p>Habitación registrada con éxito.</p>';
@@ -183,10 +184,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
 
             case 'terminar_instalacion':
-                // Marcar la instalación como completa
-                $_SESSION['instalacion_completada'] = true;
+                // Guardar la configuración en el archivo config.php
+                actualizarConfiguracion('instalacion_completada', true, '../config.php');
+
+                // Limpiar la variable de sesión `desde_index`
                 $_SESSION['desde_index'] = null;
-                unset($_SESSION['desde_index']); // Limpia la variable de control
+                unset($_SESSION['desde_index']);
+
+                // Redirigir al sistema principal
                 header('Location: ../public/index.php');
                 exit();
 
@@ -196,6 +201,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (Exception $e) {
         echo '<p>Error al procesar la acción: ' . $e->getMessage() . '</p>';
     }
+}
+function actualizarConfiguracion($clave, $valor, $archivo = '../config.php') {
+    // Leer la configuración existente
+    $config = include $archivo;
+
+    // Actualizar el valor de la clave
+    $config[$clave] = $valor;
+
+    // Guardar los cambios de vuelta al archivo
+    file_put_contents($archivo, '<?php return ' . var_export($config, true) . ';');
 }
 ?>
 

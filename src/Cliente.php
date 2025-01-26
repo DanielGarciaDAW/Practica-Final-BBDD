@@ -49,9 +49,8 @@ class Cliente extends Persona {
 
         // Campos adicionales específicos de Cliente
         $additionalFields = [
-            'correo' => $this->email,
-            'tel' => $this->tel
-
+            'email' => $this->email,
+            'telefono' => $this->tel
         ];
 
         // Llamamos al método save de la clase base, pasando la tabla 'clientes'

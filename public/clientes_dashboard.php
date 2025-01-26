@@ -1,6 +1,6 @@
 <?php
 
-include '../includes/conexion.php';
+include '../includes/conexionBBDD.php';
 include '../src/Casa.php';
 include '../src/Habitacion.php';
 include '../src/Cliente.php';
@@ -98,7 +98,7 @@ try {
 <body>
 <header>
     <div>Casa Rural</div>
-    <div>Bienvenido, <?php echo htmlspecialchars($_SESSION['cliente']); ?></div>
+    <div>Bienvenido, <?php echo htmlspecialchars($_SESSION['cliente']['nombre']); ?></div>
     <form method="post" action="logout.php" style="margin: 0;">
         <button class="logout-btn">Logout</button>
     </form>
@@ -113,28 +113,48 @@ try {
 <main>
     <h1>Casas disponibles</h1>
     <?php if (!empty($casas)): ?>
+        <?php $hayCasas = false; ?>
         <?php foreach ($casas as $casa): ?>
             <?php if ($casa['disponible'] == 1): ?>
                 <div class="casa">
                     <h2><?php echo htmlspecialchars($casa['nombre']); ?></h2>
                     <p>Capacidad: <?php echo htmlspecialchars($casa['capacidad']); ?></p>
-                    <p><strong>Precio: </strong> 240€ por noche</p>
+                    <p><strong>Precio: </strong> <?php echo htmlspecialchars(($casa['precio'])) ?> € por noche</p>
+                    <form action="reservar.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($casa['id']); ?>">
+                        <button type="submit" name="reservar_casa">Reservar</button>
+                    </form>
                 </div>
+                <?php $hayCasas = true; ?>
             <?php endif; ?>
         <?php endforeach; ?>
-    <?php elseif (!empty($habitaciones)): ?>
-        <h1>Habitaciones disponibles</h1>
+
+        <?php if (!$hayCasas): ?>
+            <p>No hay casas disponibles.</p>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <h1>Habitaciones disponibles</h1>
+    <?php if (!empty($habitaciones)): ?>
+        <?php $hayHabitaciones = false; ?>
         <?php foreach ($habitaciones as $habitacion): ?>
             <?php if ($habitacion['disponible'] == 1): ?>
                 <div class="habitacion">
                     <h2><?php echo htmlspecialchars($habitacion['nombre']); ?></h2>
                     <p>Capacidad: <?php echo htmlspecialchars($habitacion['capacidad']); ?></p>
-                    <p><strong>Precio: </strong>120€ por noche</p>
+                    <p><strong>Precio: </strong> <?php echo htmlspecialchars(($habitacion['precio'])) ?> € por noche</p>
+                    <form action="reservar.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($habitacion['id']); ?>">
+                        <button type="submit" name="reservar_habitacion">Reservar</button>
+                    </form>
                 </div>
+                <?php $hayHabitaciones = true; ?>
             <?php endif; ?>
         <?php endforeach; ?>
-    <?php else: ?>
-        <p>No hay casas ni habitaciones disponibles.</p>
+
+        <?php if (!$hayHabitaciones): ?>
+            <p>No hay casas disponibles</p>
+        <?php endif; ?>
     <?php endif; ?>
 </main>
 </body>

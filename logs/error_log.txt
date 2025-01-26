@@ -398,3 +398,44 @@ Stack trace:
             ) ENGINE=InnoDB DEF...' at line 8
 [2025-01-26 17:18:24] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
 [2025-01-26 17:18:24] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:08] Este es un error de prueba.
+[2025-01-26 22:11:08] Este es un error de prueba.
+[2025-01-26 22:11:08] Error en tabla Clientes: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DE...' at line 8
+[2025-01-26 22:11:08] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:08] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:08] Error en tabla Clientes: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DE...' at line 8
+[2025-01-26 22:11:08] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:08] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:21] Este es un error de prueba.
+[2025-01-26 22:11:21] Error en tabla Clientes: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DE...' at line 8
+[2025-01-26 22:11:21] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:21] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:21] Error en tabla Clientes: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DE...' at line 8
+[2025-01-26 22:11:21] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:21] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:46] Este es un error de prueba.
+[2025-01-26 22:11:46] Error en tabla Clientes: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DE...' at line 8
+[2025-01-26 22:11:46] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:46] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:46] Error en tabla Clientes: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DE...' at line 8
+[2025-01-26 22:11:46] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:11:46] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 22:25:47] Este es un error de prueba.
+[2025-01-26 22:25:47] Este es un error de prueba.
+[2025-01-26 22:26:07] Este es un error de prueba.
+[2025-01-26 22:26:18] Este es un error de prueba.
+[2025-01-26 22:26:30] Este es un error de prueba.
+[2025-01-26 22:26:43] Este es un error de prueba.
+[2025-01-26 22:26:47] Este es un error de prueba.
+[2025-01-26 22:26:47] Este es un error de prueba.
+[2025-01-26 22:27:25] Este es un error de prueba.
+[2025-01-26 22:29:39] Este es un error de prueba.
+[2025-01-26 22:31:16] Este es un error de prueba.
+[2025-01-26 22:33:37] Este es un error de prueba.
+[2025-01-26 22:44:49] Este es un error de prueba.

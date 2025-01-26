@@ -38,10 +38,10 @@ function inicializarBaseDeDatos() {
                 id INT AUTO_INCREMENT PRIMARY KEY, -- Identificador único
                 nombre VARCHAR(255) NOT NULL,              -- Nombre completo
                 usuario VARCHAR(255) UNIQUE NOT NULL,             -- Nombre de usuario
-                correo VARCHAR(255) UNIQUE NOT NULL,       -- Correo único
+                email VARCHAR(255) UNIQUE NOT NULL,       -- Correo único
                 password VARCHAR(255) NOT NULL,          -- Contraseña encriptada
                 telefono VARCHAR(15),                      -- Teléfono
-                fecha-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         ";
         $conexion->query($sqlClientes);
@@ -87,6 +87,25 @@ function inicializarBaseDeDatos() {
         error_log("[" . date("Y-m-d H:i:s") . "] Error en tabla Casas: " . $e->getMessage() . "\n", 3, __DIR__ . '/../logs/error_log.txt');
     }
 
+    // Creación de la tabla `habitaciones`
+    try {
+        echo '<script>console.log("Creando Tabla Habitaciones");</script>';
+        $sqlHabitaciones = "
+            CREATE TABLE IF NOT EXISTS habitaciones (
+                id INT AUTO_INCREMENT PRIMARY KEY, -- Identificador único
+                nombre VARCHAR(255) UNIQUE NOT NULL,         -- Nombre de la habitación
+                numero_habitacion INT UNIQUE NOT NULL,              -- Número de habitación
+                disponible BOOLEAN DEFAULT TRUE,             -- Disponibilidad
+                capacidad INT NOT NULL,
+                precio INT NOT NULL
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+        ";
+        $conexion->query($sqlHabitaciones);
+        echo '<script>console.log("Tabla Habitaciones creada");</script>';
+    } catch (PDOException $e) {
+        error_log("[" . date("Y-m-d H:i:s") . "] Error en tabla Habitaciones: " . $e->getMessage() . "\n", 3, __DIR__ . '/../logs/error_log.txt');
+    }
+
     // Creación de la tabla `reservas`
     try {
         echo '<script>console.log("Creando Tabla Reservas");</script>';
@@ -107,25 +126,6 @@ function inicializarBaseDeDatos() {
         echo '<script>console.log("Tabla Reservas creada");</script>';
     } catch (PDOException $e) {
         error_log("[" . date("Y-m-d H:i:s") . "] Error en tabla Reservas: " . $e->getMessage() . "\n", 3, __DIR__ . '/../logs/error_log.txt');
-    }
-
-    // Creación de la tabla `habitaciones`
-    try {
-        echo '<script>console.log("Creando Tabla Habitaciones");</script>';
-        $sqlHabitaciones = "
-            CREATE TABLE IF NOT EXISTS habitaciones (
-                id INT AUTO_INCREMENT PRIMARY KEY, -- Identificador único
-                nombre VARCHAR(255) UNIQUE NOT NULL,         -- Nombre de la habitación
-                numero_habitacion INT UNIQUE NOT NULL,              -- Número de habitación
-                disponible BOOLEAN DEFAULT TRUE,             -- Disponibilidad
-                capacidad INT NOT NULL,
-                precio INT NOT NULL
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-        ";
-        $conexion->query($sqlHabitaciones);
-        echo '<script>console.log("Tabla Habitaciones creada");</script>';
-    } catch (PDOException $e) {
-        error_log("[" . date("Y-m-d H:i:s") . "] Error en tabla Habitaciones: " . $e->getMessage() . "\n", 3, __DIR__ . '/../logs/error_log.txt');
     }
 
     // Creación de la tabla `reservas_casas_habitaciones`
