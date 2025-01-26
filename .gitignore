@@ -1,2 +1,50 @@
-/cache/
-/config/development/
+# Ignorar configuraciones de PhpStorm
+.idea/
+*.iml
+
+# Ignorar configuraciones de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de XAMPP
+/xamppfiles/
+*.log
+*.pid
+
+# Ignorar configuraciones de servidor
+/.htaccess
+/.vscode/
+*.env
+
+# Ignorar archivos generados por Composer
+/vendor/
+composer.lock
+
+# Ignorar bases de datos locales (si las estás generando en el proyecto)
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# Ignorar cachés, archivos temporales y cargas
+/tmp/
+*.cache
+*.session
+*.log
+/uploads/
+*.bak
+*.backup
+
+# Ignorar configuraciones de IDE adicionales
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar directorios de depuración
+/node_modules/
+.npm/
+.npm-debug.log
+/debug.log
+
+# Ignorar configuraciones específicas de SO
+*.swp
+*.swo

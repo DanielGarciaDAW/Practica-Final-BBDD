@@ -1,0 +1,273 @@
+[2025-01-25 17:59:14] Este es un error de prueba.
+[2025-01-25 17:59:45] Este es un error de prueba.
+[2025-01-25 18:05:58] Este es un error de prueba.
+[25-Jan-2025 18:05:58 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php on line 3
+[2025-01-25 18:07:14] Este es un error de prueba.
+[2025-01-25 18:07:16] Este es un error de prueba.
+[2025-01-25 18:08:07] Este es un error de prueba.
+[2025-01-25 18:15:07] Este es un error de prueba.
+[2025-01-25 18:15:07] Este es un error de prueba.
+[2025-01-25 18:15:07] Este es un error de prueba.
+[2025-01-25 20:35:11] Este es un error de prueba.
+[2025-01-25 20:35:11] SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-25 20:36:18] Este es un error de prueba.
+[2025-01-25 20:37:13] Este es un error de prueba.
+[2025-01-25 20:38:52] Este es un error de prueba.
+[2025-01-25 20:40:11] Este es un error de prueba.
+[2025-01-25 20:40:18] Este es un error de prueba.
+[2025-01-25 20:40:53] Este es un error de prueba.
+[2025-01-25 20:44:40] Este es un error de prueba.
+[2025-01-25 20:48:22] Este es un error de prueba.
+[2025-01-25 20:48:24] Este es un error de prueba.
+[2025-01-25 20:48:26] Este es un error de prueba.
+[2025-01-25 20:49:13] Este es un error de prueba.
+[2025-01-25 23:47:02] Este es un error de prueba.
+[2025-01-25 23:47:02] SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-25 23:47:02] SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-25 23:49:46] Este es un error de prueba.
+[2025-01-25 23:51:54] Este es un error de prueba.
+[2025-01-25 23:52:41] Este es un error de prueba.
+[2025-01-25 23:54:03] Este es un error de prueba.
+[2025-01-26 00:49:59] Este es un error de prueba.
+[26-Jan-2025 00:49:59 Europe/Berlin] PHP Warning:  require_once(../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 4
+[26-Jan-2025 00:49:59 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexion.php' (include_path='C:\xampp\php\PEAR') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php:4
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 4
+[2025-01-26 00:50:21] Este es un error de prueba.
+[26-Jan-2025 00:50:21 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 6
+[2025-01-26 00:50:21] Este es un error de prueba.
+[26-Jan-2025 00:50:21 Europe/Berlin] PHP Fatal error:  Declaration of Casa::guardar($conexion) must be compatible with Estancia::guardar($conexion, $table) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\src\Casa.php on line 17
+[2025-01-26 00:54:18] Este es un error de prueba.
+[26-Jan-2025 00:54:18 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 6
+[2025-01-26 00:54:18] Este es un error de prueba.
+[26-Jan-2025 00:54:18 Europe/Berlin] PHP Fatal error:  Declaration of Habitacion::guardar($conexion) must be compatible with Estancia::guardar($conexion, $table) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\src\Habitacion.php on line 32
+[2025-01-26 00:05:14] Este es un error de prueba.
+[26-Jan-2025 00:05:14 UTC] PHP Warning:  require_once(../includes/conexionBBDD.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 5
+[26-Jan-2025 00:05:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexionBBDD.php' (include_path='.;C:\php\pear') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php:5
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 5
+[2025-01-26 00:07:05] Este es un error de prueba.
+[26-Jan-2025 00:07:05 UTC] PHP Warning:  require_once(../includes/conexionBBDD.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 4
+[26-Jan-2025 00:07:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexionBBDD.php' (include_path='.;C:\php\pear') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php:4
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 4
+[2025-01-26 00:07:20] Este es un error de prueba.
+[26-Jan-2025 00:07:20 UTC] PHP Warning:  require_once(C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public/../includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 4
+[26-Jan-2025 00:07:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public/../includes/conexion.php' (include_path='.;C:\php\pear') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php:4
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 4
+[2025-01-26 00:07:41] Este es un error de prueba.
+[26-Jan-2025 00:07:41 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active (started from C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php on line 4) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 6
+[26-Jan-2025 00:07:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php:24) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 11
+[2025-01-26 00:08:23] Este es un error de prueba.
+[26-Jan-2025 00:08:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active (started from C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php on line 4) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 6
+[26-Jan-2025 00:08:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php:24) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 11
+[2025-01-26 00:08:32] Este es un error de prueba.
+[26-Jan-2025 00:08:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php:24) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 13
+[2025-01-26 00:08:35] Este es un error de prueba.
+[26-Jan-2025 00:08:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php:24) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 13
+[2025-01-26 00:11:32] Este es un error de prueba.
+[26-Jan-2025 00:11:32 UTC] PHP Warning:  require_once(./includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 5
+[26-Jan-2025 00:11:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required './includes/conexion.php' (include_path='.;C:\php\pear') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php:5
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 5
+[2025-01-26 00:11:32] Este es un error de prueba.
+[26-Jan-2025 00:11:32 UTC] PHP Warning:  require_once(./includes/conexion.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 5
+[26-Jan-2025 00:11:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required './includes/conexion.php' (include_path='.;C:\php\pear') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php:5
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 5
+[2025-01-26 00:11:35] Este es un error de prueba.
+[26-Jan-2025 00:11:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php:24) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 14
+[2025-01-26 00:11:35] Este es un error de prueba.
+[26-Jan-2025 00:11:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\includes\conexionBBDD.php:24) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\public\index.php on line 14
+[2025-01-26 00:12:34] Este es un error de prueba.
+[2025-01-26 00:12:34] Este es un error de prueba.
+[26-Jan-2025 00:12:34 UTC] PHP Warning:  require(../includes/conexionBBDD.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 3
+[26-Jan-2025 00:12:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexionBBDD.php' (include_path='.;C:\php\pear') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php:3
+Stack trace:
+#0 C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php(4): require_once()
+#1 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 3
+[2025-01-26 00:12:55] Este es un error de prueba.
+[26-Jan-2025 00:12:55 UTC] PHP Warning:  require_once(../includes/conexionBBDD.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 5
+[26-Jan-2025 00:12:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../includes/conexionBBDD.php' (include_path='.;C:\php\pear') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php:5
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 5
+[2025-01-26 00:13:05] Este es un error de prueba.
+[2025-01-26 00:13:05] Este es un error de prueba.
+[2025-01-26 00:13:05] Este es un error de prueba.
+[26-Jan-2025 00:13:05 UTC] PHP Fatal error:  Declaration of Habitacion::eliminar($conexion) must be compatible with Estancia::eliminar($conexion, $table) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\src\Habitacion.php on line 56
+[2025-01-26 00:13:05] Este es un error de prueba.
+[26-Jan-2025 00:13:05 UTC] PHP Fatal error:  Declaration of Habitacion::eliminar($conexion) must be compatible with Estancia::eliminar($conexion, $table) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\src\Habitacion.php on line 56
+[2025-01-26 00:13:07] Este es un error de prueba.
+[26-Jan-2025 00:13:07 UTC] PHP Fatal error:  Declaration of Habitacion::eliminar($conexion) must be compatible with Estancia::eliminar($conexion, $table) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\src\Habitacion.php on line 56
+[2025-01-26 00:14:20] Este es un error de prueba.
+[26-Jan-2025 00:14:21 UTC] PHP Fatal error:  Declaration of Empleado::save($conexion) must be compatible with Persona::save($conexion, $table, $additionalFields = []) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\src\Empleado.php on line 33
+[2025-01-26 00:17:33] Este es un error de prueba.
+[26-Jan-2025 00:17:33 UTC] PHP Fatal error:  Declaration of Empleado::save($conexion) must be compatible with Persona::save($conexion, $table, $additionalFields = []) in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\src\Empleado.php on line 32
+[2025-01-26 00:18:04] Este es un error de prueba.
+[2025-01-26 00:18:32] Este es un error de prueba.
+[2025-01-26 00:18:32] Este es un error de prueba.
+[2025-01-26 00:20:33] Este es un error de prueba.
+[2025-01-26 00:20:33] Este es un error de prueba.
+[26-Jan-2025 00:20:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php:43
+Stack trace:
+#0 C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php(30): inicializarBaseDeDatos()
+#1 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 43
+[2025-01-26 00:21:20] Este es un error de prueba.
+[2025-01-26 00:21:20] Este es un error de prueba.
+[26-Jan-2025 00:21:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php:43
+Stack trace:
+#0 C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php(30): inicializarBaseDeDatos()
+#1 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 43
+[2025-01-26 00:24:02] Este es un error de prueba.
+[2025-01-26 00:24:02] Error de conexión a la base de datos: could not find driver
+[2025-01-26 00:24:54] Este es un error de prueba.
+[2025-01-26 00:24:54] Error de conexión a la base de datos: could not find driver
+[2025-01-26 01:28:40] Este es un error de prueba.
+[2025-01-26 01:28:40] Este es un error de prueba.
+[26-Jan-2025 01:28:40 Europe/Berlin] PHP Warning:  require(./includes/conexionBBDD.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 3
+[26-Jan-2025 01:28:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './includes/conexionBBDD.php' (include_path='C:\xampp\php\PEAR') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php:3
+Stack trace:
+#0 C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php(4): require_once()
+#1 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 3
+[2025-01-26 01:28:41] Este es un error de prueba.
+[2025-01-26 01:28:41] Este es un error de prueba.
+[26-Jan-2025 01:28:41 Europe/Berlin] PHP Warning:  require(./includes/conexionBBDD.php): Failed to open stream: No such file or directory in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 3
+[26-Jan-2025 01:28:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './includes/conexionBBDD.php' (include_path='C:\xampp\php\PEAR') in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php:3
+Stack trace:
+#0 C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php(4): require_once()
+#1 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 3
+[2025-01-26 01:29:02] Este es un error de prueba.
+[2025-01-26 01:29:02] Este es un error de prueba.
+[26-Jan-2025 01:29:02 Europe/Berlin] PHP Warning:  Undefined variable $conexion in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 45
+[26-Jan-2025 01:29:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php:45
+Stack trace:
+#0 C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php(30): inicializarBaseDeDatos()
+#1 {main}
+  thrown in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\crearBBDD.php on line 45
+[2025-01-26 01:31:00] Este es un error de prueba.
+[2025-01-26 01:31:00] Este es un error de prueba.
+[2025-01-26 01:31:08] Este es un error de prueba.
+[2025-01-26 01:31:08] Este es un error de prueba.
+[2025-01-26 01:31:18] Este es un error de prueba.
+[2025-01-26 01:33:14] Este es un error de prueba.
+[2025-01-26 01:34:32] Este es un error de prueba.
+[2025-01-26 01:34:32] Este es un error de prueba.
+[2025-01-26 01:34:46] Este es un error de prueba.
+[26-Jan-2025 01:34:46 Europe/Berlin] PHP Warning:  Undefined array key "descripcion_casa" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 49
+[26-Jan-2025 01:34:46 Europe/Berlin] PHP Warning:  Undefined array key "capacidad_casa" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 50
+[2025-01-26 01:35:07] Este es un error de prueba.
+[2025-01-26 01:35:31] Este es un error de prueba.
+[2025-01-26 01:37:55] Este es un error de prueba.
+[2025-01-26 01:39:11] Este es un error de prueba.
+[2025-01-26 01:41:33] Este es un error de prueba.
+[2025-01-26 01:41:33] Este es un error de prueba.
+[2025-01-26 01:42:06] Este es un error de prueba.
+[2025-01-26 01:42:06] Este es un error de prueba.
+[2025-01-26 01:42:08] Este es un error de prueba.
+[26-Jan-2025 01:42:08 Europe/Berlin] PHP Warning:  Undefined array key "descripcion_casa" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 49
+[26-Jan-2025 01:42:08 Europe/Berlin] PHP Warning:  Undefined array key "capacidad_casa" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 50
+[2025-01-26 01:46:02] Este es un error de prueba.
+[26-Jan-2025 01:46:02 Europe/Berlin] PHP Warning:  Undefined array key "descripcion_casa" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 49
+[26-Jan-2025 01:46:02 Europe/Berlin] PHP Warning:  Undefined array key "capacidad_casa" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 50
+[2025-01-26 01:46:10] Este es un error de prueba.
+[2025-01-26 01:46:10] Este es un error de prueba.
+[2025-01-26 01:46:42] Este es un error de prueba.
+[2025-01-26 01:47:04] Este es un error de prueba.
+[2025-01-26 01:49:00] Este es un error de prueba.
+[2025-01-26 01:49:00] Este es un error de prueba.
+[2025-01-26 01:53:16] Este es un error de prueba.
+[2025-01-26 01:53:16] Este es un error de prueba.
+[2025-01-26 08:19:06] Error en tabla Habitaciones: SQLSTATE[42000]: Syntax error or access violation: 1072 Key column 'id_casa' doesn't exist in table
+[2025-01-26 08:19:06] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:20:43] Error en tabla Habitaciones: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=utf8' at line 6
+[2025-01-26 08:20:43] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:20:57] Error en tabla Habitaciones: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=utf8' at line 6
+[2025-01-26 08:20:57] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:29:09] Este es un error de prueba.
+[2025-01-26 08:29:09] Este es un error de prueba.
+[2025-01-26 08:29:21] Este es un error de prueba.
+[2025-01-26 08:29:21] Este es un error de prueba.
+[2025-01-26 08:46:49] Este es un error de prueba.
+[2025-01-26 08:46:49] Error en tabla Casas: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=utf8' at line 6
+[2025-01-26 08:46:49] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:47:03] Este es un error de prueba.
+[2025-01-26 08:47:03] Este es un error de prueba.
+[2025-01-26 08:47:03] Error en tabla Casas: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=utf8' at line 6
+[2025-01-26 08:47:03] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:47:03] Error en tabla Casas: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=utf8' at line 6
+[2025-01-26 08:47:03] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:47:22] Este es un error de prueba.
+[2025-01-26 08:47:22] Este es un error de prueba.
+[2025-01-26 08:47:22] Error en tabla Casas: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=utf8' at line 6
+[2025-01-26 08:47:22] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:47:22] Error en tabla Casas: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=utf8' at line 6
+[2025-01-26 08:47:22] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 08:48:07] Este es un error de prueba.
+[2025-01-26 08:48:07] Este es un error de prueba.
+[2025-01-26 09:00:58] Este es un error de prueba.
+[2025-01-26 09:01:19] Este es un error de prueba.
+[2025-01-26 09:01:19] Este es un error de prueba.
+[2025-01-26 09:01:27] Este es un error de prueba.
+[26-Jan-2025 09:01:27 Europe/Berlin] PHP Warning:  Undefined array key "descripcion_habitacion" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 62
+[26-Jan-2025 09:01:27 Europe/Berlin] PHP Warning:  Undefined array key "capacidad_habitacion" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 63
+[26-Jan-2025 09:01:27 Europe/Berlin] PHP Warning:  Undefined array key "numero_habitacion" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 64
+[2025-01-26 09:01:42] Este es un error de prueba.
+[26-Jan-2025 09:01:42 Europe/Berlin] PHP Warning:  Undefined array key "descripcion_habitacion" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 61
+[26-Jan-2025 09:01:42 Europe/Berlin] PHP Warning:  Undefined array key "capacidad_habitacion" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 62
+[26-Jan-2025 09:01:42 Europe/Berlin] PHP Warning:  Undefined array key "numero_habitacion" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 63
+[2025-01-26 09:32:39] Este es un error de prueba.
+[2025-01-26 09:32:39] Este es un error de prueba.
+[2025-01-26 09:32:59] Este es un error de prueba.
+[26-Jan-2025 09:32:59 Europe/Berlin] PHP Warning:  Undefined array key "descripcion_casa" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 49
+[2025-01-26 09:48:22] Este es un error de prueba.
+[2025-01-26 09:48:22] Este es un error de prueba.
+[2025-01-26 09:48:31] Este es un error de prueba.
+[2025-01-26 09:48:31] Este es un error de prueba.
+[2025-01-26 09:48:43] Este es un error de prueba.
+[2025-01-26 09:49:19] Este es un error de prueba.
+[26-Jan-2025 09:49:19 Europe/Berlin] PHP Warning:  Undefined array key "nombre_habitacion" in C:\Users\Dani DAW\OneDrive - Conselleria d'Educació\2 DAW\Desarrollo Web Entorno Servidor\Ejercicios\Practica Final BBDD\config\install.php on line 61
+[2025-01-26 10:04:02] Este es un error de prueba.
+[2025-01-26 10:06:08] Este es un error de prueba.
+[2025-01-26 10:06:22] Este es un error de prueba.
+[2025-01-26 10:08:12] Este es un error de prueba.
+[2025-01-26 10:08:53] Este es un error de prueba.
+[2025-01-26 10:09:08] Este es un error de prueba.
+[2025-01-26 10:17:43] Este es un error de prueba.
+[2025-01-26 10:18:18] Este es un error de prueba.
+[2025-01-26 10:18:41] Este es un error de prueba.
+[2025-01-26 10:19:13] Este es un error de prueba.
+[2025-01-26 10:19:32] Este es un error de prueba.
+[2025-01-26 10:21:04] Este es un error de prueba.
+[2025-01-26 10:21:38] Este es un error de prueba.
+[2025-01-26 10:21:38] Este es un error de prueba.
+[2025-01-26 10:21:50] Este es un error de prueba.
+[2025-01-26 10:24:54] Este es un error de prueba.
+[2025-01-26 10:24:54] Este es un error de prueba.
+[2025-01-26 10:31:08] Este es un error de prueba.
+[2025-01-26 10:32:15] Este es un error de prueba.
+[2025-01-26 10:32:58] Este es un error de prueba.
+[2025-01-26 10:35:19] Este es un error de prueba.
+[2025-01-26 10:35:19] Este es un error de prueba.
+[2025-01-26 10:37:47] Este es un error de prueba.
+[2025-01-26 10:37:51] Este es un error de prueba.
+[2025-01-26 10:37:51] Este es un error de prueba.
+[2025-01-26 10:39:45] Este es un error de prueba.
+[2025-01-26 10:39:45] Este es un error de prueba.
+[2025-01-26 10:39:58] Este es un error de prueba.
+[2025-01-26 10:41:41] Este es un error de prueba.
+[2025-01-26 10:41:51] Este es un error de prueba.
+[2025-01-26 10:41:51] Este es un error de prueba.
+[2025-01-26 10:45:51] Este es un error de prueba.

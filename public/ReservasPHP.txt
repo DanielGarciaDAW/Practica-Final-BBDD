@@ -1,0 +1,12 @@
+<!-- archivo: public/reservar.php -->
+<form method="POST" action="reservar_producto.php">
+    <label for="producto_id">Producto:</label>
+    <select name="producto_id">
+        <!-- Opciones de productos -->
+    </select><br>
+
+    <label for="fecha">Fecha de la reserva:</label>
+    <input type="date" name="fecha" required><br>
+
+    <input type="submit" value="Reservar">
+</form>

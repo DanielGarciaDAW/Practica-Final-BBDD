@@ -1,0 +1,90 @@
+La BBDD de nuestra aplicación es una BBDD hecha para complejos de casas rurales.
+En ella encontramos:
+
+1. Tabla empleados
+
+    Descripción: Esta tabla almacena la información de los empleados que gestionan las reservas,
+    como su nombre, contraseña, fecha de contrato y puesto en la empresa.
+
+id_empleado	    INT (PK)	    Identificador único del empleado
+nombre	        VARCHAR(255)	Nombre completo del empleado
+contraseña	    VARCHAR(255)	Contraseña del empleado (encriptada)
+fecha_contrato	DATE	        Fecha de contratación del empleado
+puesto	        VARCHAR(255)    Puesto o jerarquía del empleado
+
+
+2. Tabla clientes
+
+    Descripción: Esta tabla contiene la información de los clientes, como su nombre, correo electrónico,
+    teléfono y las reservas que han realizado.
+
+id_cliente	INT (PK)	    Identificador único del cliente
+nombre	    VARCHAR(255)	Nombre completo del cliente
+correo	    VARCHAR(255)	Correo electrónico del cliente (UNIQUE)
+contraseña	VARCHAR(255)	Contraseña del cliente (encriptada)
+telefono	VARCHAR(15)	    Teléfono del cliente
+
+
+3. Tabla reservas
+
+    Descripción: La tabla de reservas almacena la información sobre las reservas realizadas por los clientes,
+    con las fechas de inicio y fin, y el estado de la reserva.
+
+id_reserva	    INT (PK)	Identificador único de la reserva
+id_cliente	    INT (FK)	Referencia al cliente (tabla clientes)
+fecha_reserva	DATETIME	Fecha y hora en que se realiza la reserva
+fecha_inicio	DATE	    Fecha de inicio de la reserva
+fecha_fin	    DATE	    Fecha de finalización de la reserva
+estado	        ENUM('Pendiente', 'Confirmada', 'Cancelada')	Estado de la reserva
+
+
+4. Tabla casas
+
+    Descripción: Esta tabla contiene información sobre las casas disponibles para alquilar,
+    como su nombre y disponibilidad.
+
+id	            INT (PK)	    Identificador único de la casa
+nombre	        VARCHAR(255)	Nombre de la casa
+disponible	    BOOLEAN	        Indica si la casa está disponible o no
+
+
+5. Tabla habitaciones
+
+    Descripción: Al igual que las casas, esta tabla contiene información sobre las habitaciones disponibles
+    para alquilar, su número y disponibilidad.
+
+id             	    INT (PK)	Identificador único de la habitación
+numero_habitacion	INT	        Número de la habitación
+disponible	        BOOLEAN	    Indica si la habitación está disponible o no
+
+
+6. Tabla reservas_casas_habitaciones
+
+    Descripción: Esta tabla es una tabla intermedia que relaciona las reservas con las casas y habitaciones.
+    Permite que un cliente reserve varias casas y/o habitaciones en una sola reserva.
+
+id              INT         Identificativo para almecenamiento
+id_reserva	    INT (FK)	Referencia a la reserva (tabla reservas)
+id_casa	        INT (FK)	Referencia a la casa (tabla casas)
+id_habitacion	INT (FK)	Referencia a la habitación (tabla habitaciones)
+
+
+
+Modelo Entidad-Relación (ER) ---------------------------------------------------------------------------
+
+Entidades:
+
+    Empleado (id_empleado, nombre, contraseña, fecha_contrato, puesto)
+    Cliente (id_cliente, nombre, correo, contraseña, telefono)
+    Reserva (id_reserva, id_cliente, fecha_reserva, fecha_inicio, fecha_fin, estado)
+    Casa (id_casa, nombre, disponible, tiempo_reserva)
+    Habitación (id_habitacion, numero_habitacion, id_casa, disponible)
+    Reserva_Casa_Habitación (id_reserva, id_casa, id_habitacion)
+
+Relaciones:
+
+    Empleado → Reserva: Un empleado puede gestionar varias reservas (relación uno a muchos).
+    Cliente → Reserva: Un cliente puede hacer muchas reservas (relación uno a muchos).
+    Reserva → Reserva_Casa_Habitación: Una reserva puede estar asociada a varias casas y habitaciones (relación uno a muchos).
+    Casa → Reserva_Casa_Habitación: Una casa puede ser parte de varias reservas (relación uno a muchos).
+    Habitación → Reserva_Casa_Habitación: Una habitación puede estar asociada a varias reservas (relación uno a muchos).

@@ -1,0 +1,38 @@
+/mi_proyecto
+│
+├── /css
+│   └── styles.css
+│
+├── /fpdf
+│   └── fpdf.php (para la generación de PDFs)
+│
+├── /includes
+│   ├── conexion.php (archivo de conexión a la base de datos)
+│   ├── funciones.php (para funciones adicionales, como la validación)
+│
+├── /public
+│   ├── index.php (pantalla de inicio o página principal)
+│   ├── registro.php (para registro de usuario)
+│   ├── login.php (para inicio de sesión)
+│   ├── productos.php (para mostrar productos)
+│   ├── reservas.php (para la gestión de reservas)
+│   └── admin.php (para gestionar usuarios y productos)
+│
+├── /pdf
+│   ├── reserva_pdf.php (para generar el comprobante de reserva)
+│   ├── listado_productos_pdf.php (para generar el listado de productos)
+│   └── informe_reservas_pdf.php (para generar el informe de reservas de un usuario)
+│
+├── /config
+│   └── config.php (configuración de la base de datos y variables globales)
+└── /logs
+    └── error_log.txt (archivo para guardar logs de errores)
+
+//TODO
+Siguiente Paso?
+
+    Configuración y prueba de la base de datos.
+    Pruebas de la interacción entre las páginas y la base de datos (registro, login, gestión de productos, etc.).
+    Implementar la parte del PDF con FPDF para los informes y comprobantes de reservas.
+
+Este es un esquema básico para empezar con tu proyecto. A medida que avances, puedes agregar más funcionalidades como validación de formularios, autenticación de sesiones, etc.

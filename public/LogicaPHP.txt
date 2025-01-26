@@ -1,0 +1,18 @@
+// archivo: public/registro_usuario.php
+<?php
+require_once '../includes/conexion.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $telefono = $_POST['telefono'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+    // Consulta para insertar el usuario
+    $sql = "INSERT INTO usuarios (nombre, email, telefono, password) VALUES (?, ?, ?, ?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$nombre, $email, $telefono, $password]);
+
+    echo "Usuario registrado con éxito.";
+}
+?>

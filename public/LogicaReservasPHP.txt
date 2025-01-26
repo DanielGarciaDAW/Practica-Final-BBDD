@@ -1,0 +1,18 @@
+// archivo: public/reservar_producto.php
+<?php
+session_start();
+require_once '../includes/conexion.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['usuario_id'])) {
+    $producto_id = $_POST['producto_id'];
+    $usuario_id = $_SESSION['usuario_id'];
+    $fecha = $_POST['fecha'];
+
+    // Insertar reserva
+    $sql = "INSERT INTO reservas (usuario_id, producto_id, fecha) VALUES (?, ?, ?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$usuario_id, $producto_id, $fecha]);
+
+    echo "Reserva realizada con éxito.";
+}
+?>

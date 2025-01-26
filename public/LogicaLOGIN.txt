@@ -1,0 +1,37 @@
+// archivo: public/login_usuario.php
+<?php
+session_start();
+require_once '../includes/conexion.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Verificar el usuario
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$email]);
+    $usuario = $stmt->fetch();
+
+    if ($usuario && password_verify($password, $usuario['password'])) {
+        $_SESSION['usuario_id'] = $usuario['id'];
+        echo "¡Bienvenido, " . $usuario['nombre'] . "!";
+    } else {
+        echo "Credenciales incorrectas.";
+    }
+}
+?>
+// GESTION DE AGREGAR O ELIMINAR
+
+// archivo: public/productos.php
+<?php
+require_once '../includes/conexion.php';
+
+$sql = "SELECT * FROM productos";
+$stmt = $pdo->query($sql);
+$productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($productos as $producto) {
+    echo $producto['nombre'] . " - " . $producto['descripcion'] . " - " . $producto['precio'] . "<br>";
+}
+?>
