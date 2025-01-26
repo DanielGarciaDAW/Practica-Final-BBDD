@@ -16,8 +16,8 @@ class Casa extends Estancia {
      * @param bool $disponible Disponibilidad de la casa.
      * @param int $capacidad Capacidad máxima de la casa.
      */
-    public function __construct($id = null, $nombre = null, $disponible = true, $capacidad = null) {
-        parent::__construct($id, $nombre, $disponible, $capacidad);
+    public function __construct($id = null, $nombre = null, $disponible = true, $capacidad = null, $precio = null) {
+        parent::__construct($id, $nombre, $disponible, $capacidad, $precio);
     }
 
 

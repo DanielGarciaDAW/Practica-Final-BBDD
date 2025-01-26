@@ -272,3 +272,129 @@ Stack trace:
 [2025-01-26 10:41:51] Este es un error de prueba.
 [2025-01-26 10:45:51] Este es un error de prueba.
 [2025-01-26 10:54:53] Este es un error de prueba.
+[2025-01-26 15:01:45] Este es un error de prueba.
+[2025-01-26 15:01:45] Error de conexión a la base de datos: SQLSTATE[HY000] [1049] Unknown database 'casarural'
+[2025-01-26 15:02:34] Este es un error de prueba.
+[2025-01-26 15:02:34] Este es un error de prueba.
+[2025-01-26 15:02:47] Este es un error de prueba.
+[2025-01-26 15:03:10] Este es un error de prueba.
+[2025-01-26 15:03:32] Este es un error de prueba.
+[26-Jan-2025 15:03:32 UTC] PHP Deprecated:  Creation of dynamic property Empleado::$usuario is deprecated in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/src/Persona.php on line 20
+[2025-01-26 15:06:26] Este es un error de prueba.
+[2025-01-26 15:06:32] Este es un error de prueba.
+[26-Jan-2025 15:06:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/crearBBDD.php:17) in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/install.php on line 181
+[2025-01-26 15:08:40] Este es un error de prueba.
+[26-Jan-2025 15:08:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/crearBBDD.php:17) in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/install.php on line 19
+[2025-01-26 15:09:52] Este es un error de prueba.
+[26-Jan-2025 15:09:52 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/crearBBDD.php:17) in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/install.php on line 19
+[2025-01-26 15:10:40] Este es un error de prueba.
+[26-Jan-2025 15:10:40 UTC] PHP Warning:  Undefined array key "precio" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 120
+[26-Jan-2025 15:10:40 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 120
+[26-Jan-2025 15:10:40 UTC] PHP Warning:  Undefined array key "precio" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 133
+[26-Jan-2025 15:10:40 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 133
+[2025-01-26 15:11:09] Este es un error de prueba.
+[2025-01-26 15:11:17] Este es un error de prueba.
+[2025-01-26 15:11:48] Este es un error de prueba.
+[2025-01-26 15:11:56] Este es un error de prueba.
+[2025-01-26 15:12:05] Este es un error de prueba.
+[2025-01-26 15:12:05] Este es un error de prueba.
+[2025-01-26 15:12:07] Este es un error de prueba.
+[2025-01-26 15:12:07] Este es un error de prueba.
+[2025-01-26 15:12:51] Este es un error de prueba.
+[2025-01-26 15:12:51] Este es un error de prueba.
+[2025-01-26 15:17:14] Este es un error de prueba.
+[2025-01-26 15:21:48] Este es un error de prueba.
+[2025-01-26 15:21:49] Este es un error de prueba.
+[2025-01-26 15:22:05] Este es un error de prueba.
+[2025-01-26 15:22:21] Este es un error de prueba.
+[2025-01-26 15:23:30] Este es un error de prueba.
+[2025-01-26 15:23:30] Este es un error de prueba.
+[2025-01-26 15:23:41] Este es un error de prueba.
+[2025-01-26 15:23:41] Este es un error de prueba.
+[2025-01-26 15:24:08] Este es un error de prueba.
+[2025-01-26 15:24:23] Este es un error de prueba.
+[2025-01-26 15:26:28] Este es un error de prueba.
+[2025-01-26 15:26:42] Este es un error de prueba.
+[2025-01-26 15:27:25] Este es un error de prueba.
+[2025-01-26 15:30:01] Este es un error de prueba.
+[2025-01-26 15:30:17] Este es un error de prueba.
+[2025-01-26 15:30:26] Este es un error de prueba.
+[26-Jan-2025 15:30:26 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/crearBBDD.php:17) in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/install.php on line 190
+[2025-01-26 15:32:54] Este es un error de prueba.
+[26-Jan-2025 15:32:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/crearBBDD.php:31) in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/config/install.php on line 19
+[2025-01-26 15:33:13] Este es un error de prueba.
+[2025-01-26 15:33:53] Este es un error de prueba.
+[2025-01-26 15:33:53] Este es un error de prueba.
+[2025-01-26 15:33:58] Este es un error de prueba.
+[2025-01-26 15:35:55] Este es un error de prueba.
+[2025-01-26 15:38:40] Este es un error de prueba.
+[2025-01-26 15:38:50] Este es un error de prueba.
+[2025-01-26 15:38:55] Este es un error de prueba.
+[2025-01-26 15:39:00] Este es un error de prueba.
+[2025-01-26 15:39:03] Este es un error de prueba.
+[2025-01-26 15:39:56] Este es un error de prueba.
+[2025-01-26 15:40:01] Este es un error de prueba.
+[2025-01-26 15:40:33] Este es un error de prueba.
+[2025-01-26 15:40:57] Este es un error de prueba.
+[2025-01-26 15:42:02] Este es un error de prueba.
+[2025-01-26 15:42:26] Este es un error de prueba.
+[2025-01-26 15:42:49] Este es un error de prueba.
+[2025-01-26 15:43:38] Este es un error de prueba.
+[2025-01-26 15:44:36] Este es un error de prueba.
+[2025-01-26 15:44:40] Este es un error de prueba.
+[2025-01-26 15:45:01] Este es un error de prueba.
+[2025-01-26 15:45:25] Este es un error de prueba.
+[2025-01-26 15:46:31] Este es un error de prueba.
+[2025-01-26 15:50:38] Este es un error de prueba.
+[2025-01-26 16:10:29] Este es un error de prueba.
+[2025-01-26 16:10:29] Este es un error de prueba.
+[2025-01-26 16:10:29] Este es un error de prueba.
+[2025-01-26 16:13:49] Este es un error de prueba.
+[2025-01-26 16:17:38] Este es un error de prueba.
+[2025-01-26 16:17:58] Este es un error de prueba.
+[2025-01-26 16:18:13] Este es un error de prueba.
+[2025-01-26 16:18:13] Este es un error de prueba.
+[2025-01-26 16:19:55] Este es un error de prueba.
+[2025-01-26 16:20:30] Este es un error de prueba.
+[2025-01-26 16:21:15] Este es un error de prueba.
+[2025-01-26 16:25:41] Este es un error de prueba.
+[2025-01-26 16:45:16] Este es un error de prueba.
+[26-Jan-2025 16:45:16 UTC] PHP Warning:  Undefined array key "errores" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 15
+[2025-01-26 16:45:20] Este es un error de prueba.
+[26-Jan-2025 16:45:20 UTC] PHP Warning:  Undefined array key "errores" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 15
+[2025-01-26 16:45:53] Este es un error de prueba.
+[26-Jan-2025 16:45:53 UTC] PHP Warning:  Undefined array key "errores" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 15
+[2025-01-26 16:45:53] Este es un error de prueba.
+[26-Jan-2025 16:45:53 UTC] PHP Warning:  Undefined array key "errores" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 15
+[2025-01-26 16:46:11] Este es un error de prueba.
+[26-Jan-2025 16:46:11 UTC] PHP Warning:  Undefined array key "errores" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 15
+[2025-01-26 16:46:11] Este es un error de prueba.
+[26-Jan-2025 16:46:11 UTC] PHP Warning:  Undefined array key "errores" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 15
+[2025-01-26 16:46:14] Este es un error de prueba.
+[26-Jan-2025 16:46:14 UTC] PHP Warning:  Undefined array key "errores" in /Users/danidejo/Desktop/helloreact/Practica-Final-BBDD/public/index.php on line 15
+[2025-01-26 16:47:54] Este es un error de prueba.
+[2025-01-26 16:47:54] Este es un error de prueba.
+[2025-01-26 16:47:54] Este es un error de prueba.
+[2025-01-26 16:47:56] Este es un error de prueba.
+[2025-01-26 16:48:33] Este es un error de prueba.
+[2025-01-26 16:53:21] Este es un error de prueba.
+[2025-01-26 16:53:21] Este es un error de prueba.
+[2025-01-26 16:53:30] Este es un error de prueba.
+[2025-01-26 16:53:50] Este es un error de prueba.
+[2025-01-26 16:54:41] Este es un error de prueba.
+[2025-01-26 16:56:06] Este es un error de prueba.
+[2025-01-26 16:56:52] Este es un error de prueba.
+[2025-01-26 16:58:22] Este es un error de prueba.
+[2025-01-26 17:00:15] Este es un error de prueba.
+[2025-01-26 17:03:32] Este es un error de prueba.
+[2025-01-26 17:04:25] Este es un error de prueba.
+[2025-01-26 17:06:43] Este es un error de prueba.
+[2025-01-26 17:11:25] Este es un error de prueba.
+[2025-01-26 17:12:05] Este es un error de prueba.
+[2025-01-26 17:15:32] Este es un error de prueba.
+[2025-01-26 17:18:24] Este es un error de prueba.
+[2025-01-26 17:18:24] Este es un error de prueba.
+[2025-01-26 17:18:24] Error en tabla Clientes: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEF...' at line 8
+[2025-01-26 17:18:24] Error en tabla Reservas: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas` (errno: 150 "Foreign key constraint is incorrectly formed")
+[2025-01-26 17:18:24] Error en tabla reservas-casas-habitaciones: SQLSTATE[HY000]: General error: 1005 Can't create table `casarural`.`reservas_casas_habitaciones` (errno: 150 "Foreign key constraint is incorrectly formed")

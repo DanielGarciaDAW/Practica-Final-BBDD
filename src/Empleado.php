@@ -17,8 +17,8 @@ class Empleado extends Persona {
      * @param string|null $fecha_contrato Fecha de contratación.
      * @param string|null $puesto Puesto del empleado.
      */
-    public function __construct($id = null, $nombre = null,$usuario = null, $password = null, $fecha_contrato = null, $puesto = null) {
-        parent::__construct($id, $nombre, $usuario,$password);
+    public function __construct($id = null, $nombre = null, $usuario = null, $password = null, $fecha_contrato = null, $puesto = null) {
+        parent::__construct($id, $nombre, $usuario, $password);
         $this->fecha_contrato = $fecha_contrato;
         $this->puesto = $puesto;
     }

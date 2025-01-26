@@ -14,7 +14,7 @@ if (session_status() == PHP_SESSION_NONE) {
 if (isset($_SESSION['mensajeConexion'])) {
     $mensaje = $_SESSION['mensajeConexion'];
     unset($_SESSION['mensajeConexion']);
-    echo '<script>console.log("' . $mensaje . '");</script>';
+    //echo '<script>console.log("' . $mensaje . '");</script>';
 }
 
 /**
@@ -40,7 +40,8 @@ function inicializarBaseDeDatos() {
                 usuario VARCHAR(255) UNIQUE NOT NULL,             -- Nombre de usuario
                 correo VARCHAR(255) UNIQUE NOT NULL,       -- Correo único
                 password VARCHAR(255) NOT NULL,          -- Contraseña encriptada
-                telefono VARCHAR(15)                      -- Teléfono
+                telefono VARCHAR(15),                      -- Teléfono
+                fecha-registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         ";
         $conexion->query($sqlClientes);
@@ -76,7 +77,8 @@ function inicializarBaseDeDatos() {
                 id INT AUTO_INCREMENT PRIMARY KEY,     -- Identificador único
                 nombre VARCHAR(255) UNIQUE NOT NULL,              -- Nombre de la casa
                 disponible BOOLEAN DEFAULT TRUE,           -- Disponibilidads
-                capacidad INT NOT NULL
+                capacidad INT NOT NULL,
+                precio INT NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         ";
         $conexion->query($sqlCasas);
@@ -116,7 +118,8 @@ function inicializarBaseDeDatos() {
                 nombre VARCHAR(255) UNIQUE NOT NULL,         -- Nombre de la habitación
                 numero_habitacion INT UNIQUE NOT NULL,              -- Número de habitación
                 disponible BOOLEAN DEFAULT TRUE,             -- Disponibilidad
-                capacidad INT NOT NULL
+                capacidad INT NOT NULL,
+                precio INT NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         ";
         $conexion->query($sqlHabitaciones);
@@ -148,4 +151,3 @@ function inicializarBaseDeDatos() {
 
 // Llamada a la función para inicializar la base de datos
 inicializarBaseDeDatos();
-?>

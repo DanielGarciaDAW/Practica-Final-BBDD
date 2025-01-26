@@ -26,4 +26,3 @@ try {
     $_SESSION['mensajeConexion'] = "La conexión a la BBDD ha fallado. Por favor, revisa los logs.";
     die("Error al conectar con la base de datos.");
 }
-?>

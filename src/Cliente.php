@@ -5,9 +5,9 @@ require_once 'Persona.php';
  * Clase Cliente: Representa a un cliente del sistema.
  */
 class Cliente extends Persona {
-    protected $correo;         // Correo electrónico único del cliente
+    protected $email;         // Correo electrónico único del cliente
     protected $tel;            // Teléfono del cliente
-    protected $fecha_registro; // Fecha de registro del cliente
+
 
     /**
      * Constructor.
@@ -19,11 +19,11 @@ class Cliente extends Persona {
      * @param string|null $tel Teléfono del cliente.
      * @param string|null $fecha_registro Fecha de registro del cliente.
      */
-    public function __construct($id = null, $nombre = null,$usuario=null, $password = null, $correo = null, $tel = null, $fecha_registro = null) {
+    public function __construct($id = null, $nombre = null,$usuario=null, $password = null, $email = null, $tel = null) {
+
         parent::__construct($id, $nombre,$usuario, $password);
-        $this->correo = $correo;
+        $this->email = $email;
         $this->tel = $tel;
-        $this->fecha_registro = $fecha_registro;
     }
 
     /**
@@ -36,21 +36,22 @@ class Cliente extends Persona {
      * @throws Exception Si las validaciones fallan.
      */
     public function guardar($conexion, $table = null, $additionalFields = []) {
+
         // Validación: El correo debe tener un formato válido
-        if (!filter_var($this->correo, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             throw new Exception("El correo no tiene un formato válido.");
         }
 
         // Validación: El teléfono debe tener entre 10 y 15 dígitos
-        if (!preg_match('/^\+?[0-9]{10,15}$/', $this->tel)) {
+        if (!preg_match('/^\+?[0-9]{9,15}$/', $this->tel)) {
             throw new Exception("El teléfono debe tener entre 10 y 15 dígitos.");
         }
 
         // Campos adicionales específicos de Cliente
         $additionalFields = [
-            'correo' => $this->correo,
-            'tel' => $this->tel,
-            'fecha_registro' => $this->fecha_registro
+            'correo' => $this->email,
+            'tel' => $this->tel
+
         ];
 
         // Llamamos al método save de la clase base, pasando la tabla 'clientes'

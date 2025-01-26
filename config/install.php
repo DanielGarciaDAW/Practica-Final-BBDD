@@ -54,6 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (!isset($_POST['capacidad_casa']) || !is_numeric($_POST['capacidad_casa']) || $_POST['capacidad_casa'] <= 0) {
                     $errores[] = "La capacidad debe ser un número mayor a 0.";
                 }
+                if (!isset($_POST['precio_casa']) || !is_numeric($_POST['precio_casa']) || $_POST['precio_casa'] <= 0) {
+                    $errores[] = "El precio debe ser mayor que 0.";
+                }
 
                 // Si hay errores, detener el procesamiento y mostrarlos
                 if (!empty($errores)) {
@@ -71,7 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     null,
                     $_POST['nombre_casa'],
                     true,
-                    $_POST['capacidad_casa']
+                    $_POST['capacidad_casa'],
+                    $_POST['precio_casa']
                 );
                 $casa->guardar($conexion);
                 echo '<p>Casa registrada con éxito.</p>';
@@ -93,6 +97,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (!isset($_POST['numero_habitacion']) || !is_numeric($_POST['numero_habitacion']) || $_POST['numero_habitacion'] <= 0) {
                     $errores[] = "El número de la habitación debe ser un número entero positivo.";
                 }
+                //Validar precio habitacion
+                if (!isset($_POST['precio_habitacion']) || !is_numeric($_POST['precio_habitacion']) || $_POST['precio_habitacion'] <= 0) {
+                    $errores[] = "El precio debe ser mayor que 0.";
+                }
                 // Si hay errores, detener el procesamiento y mostrarlos
                 if (!empty($errores)) {
                     echo '<p>Error al registrar la habitación:</p>';
@@ -111,7 +119,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_POST['nombre_habitacion'],
                     true, // Por defecto, disponible
                     $_POST['capacidad_habitacion'],
-                    $_POST['numero_habitacion']
+                    $_POST['numero_habitacion'],
+                    $_POST['precio_habitacion']
                 );
                 $habitacion->guardar($conexion);
                 echo '<p>Habitación registrada con éxito.</p>';
@@ -233,6 +242,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <h3>Registrar Casa</h3>
                         <label>Nombre: <input type="text" name="nombre_casa" required></label><br>
                         <label>Capacidad: <input type="number" name="capacidad_casa" min="1" required></label><br>
+                        <label>Precio: <input type="number" name="precio_casa" min="1" required></label><br>
                     `;
                 break;
 
@@ -242,6 +252,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label>Nombre: <input type="text" name="nombre_habitacion" required></label><br><br>
                         <label>Número de Habitación: <input type="number" name="numero_habitacion" min="1" required></label><br>
                         <label>Capacidad: <input type="number" name="capacidad_habitacion" min="1" required></label><br>
+                        <label>Precio: <input type="number" name="precio_habitacion" min="1" required></label><br>
 
                     `;
                 break;

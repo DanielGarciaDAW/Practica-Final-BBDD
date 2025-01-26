@@ -16,8 +16,8 @@ class Habitacion extends Estancia {
      * @param int $capacidad Capacidad máxima de la habitación.
      * @param int|null $numero_habitacion Número de la habitación.
      */
-    public function __construct($id = null,$nombre = null, $disponible = true, $capacidad = 2, $numero_habitacion = null) {
-        parent::__construct($id,$nombre, $disponible, $capacidad);
+    public function __construct($id = null,$nombre = null, $disponible = true, $capacidad = 2, $precio = null, $numero_habitacion = null) {
+        parent::__construct($id,$nombre, $disponible, $capacidad, $precio);
         $this->numero_habitacion = $numero_habitacion;
     }
 
@@ -29,8 +29,8 @@ class Habitacion extends Estancia {
      * @return bool Devuelve true si la operación fue exitosa.
      */
     public function guardar($conexion, $table = null) {
-        $fields = ['nombre','disponible', 'capacidad', 'numero_habitacion'];
-        $values = [$this->nombre,$this->disponible, $this->capacidad, $this->numero_habitacion];
+        $fields = ['nombre','disponible', 'capacidad','precio', 'numero_habitacion'];
+        $values = [$this->nombre, $this->disponible, $this->capacidad, $this->precio, $this->numero_habitacion];
 
         if ($this->id) {
             $setFields = implode(', ', array_map(function($f) {

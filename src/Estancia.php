@@ -5,6 +5,7 @@ abstract class Estancia {
     protected $nombre;
     protected $disponible;
     protected $capacidad;
+    protected $precio;
 
     /**
      * Constructor de la clase Estancia.
@@ -13,11 +14,12 @@ abstract class Estancia {
      * @param bool $disponible Disponibilidad de la estancia (true/false).
      * @param int $capacidad Capacidad máxima de la estancia.
      */
-    public function __construct($id = null, $nombre = null, $disponible = true, $capacidad = null) {
+    public function __construct($id = null, $nombre = null, $disponible = true, $capacidad = null, $precio = null) {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->disponible = $disponible;
         $this->capacidad = $capacidad;
+        $this->precio = $precio;
     }
 
     /**
@@ -28,8 +30,8 @@ abstract class Estancia {
      * @return bool Devuelve true si la operación fue exitosa.
      */
     public function guardar($conexion, $table) {
-        $fields = ['nombre', 'disponible', 'capacidad'];
-        $values = [$this->nombre, $this->disponible, $this->capacidad];
+        $fields = ['nombre', 'disponible', 'capacidad', 'precio'];
+        $values = [$this->nombre, $this->disponible, $this->capacidad, $this->precio];
 
         if ($this->id) {
             // Usamos una función anónima estándar compatible con PHP 7.3

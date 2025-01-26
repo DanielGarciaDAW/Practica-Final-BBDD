@@ -5,6 +5,7 @@
 abstract class Persona {
     protected $id;
     protected $nombre;
+    protected $usuario;
     protected $password;
 
     /**
@@ -35,7 +36,7 @@ abstract class Persona {
         if (strlen($this->nombre) < 3) {
             throw new Exception("El nombre debe tener al menos 3 caracteres.");
         }
-        if (strlen($this->usuario < 3)) {
+        if (strlen($this->usuario) < 3) {
             throw new Exception("El usuario debe tener al menos 3 caracteres.");
         }
         if (strlen($this->password) < 8) {

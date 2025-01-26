@@ -1,10 +1,12 @@
 <?php
+
 // Incluir la conexión a la base de datos
 require_once '../includes/conexionBBDD.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
 global $conexion;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,8 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'puesto' => $empleado['puesto'],
                 ];
 
-                //Saludamos que siempre está bien.
-                echo "<p>¡Bienvenido empleado, " . htmlspecialchars($empleado['nombre']) . "!</p>";
                 //Redirigir a la página de empleados
                 header ('Location: empleados_dashboard.php');
                 exit();
