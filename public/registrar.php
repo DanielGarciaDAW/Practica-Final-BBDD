@@ -47,7 +47,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registrar'])) {
 
     );
     $cliente->guardar($conexion);
-    $_SESSION['cliente'] = $cliente;
+    $_SESSION['cliente'] =  [
+        'id' => $cliente->getId(),
+        'nombre' => $cliente->getNombre(),
+        'usuario' => $cliente->getUsuario(),
+        'password' => $cliente->getPassword(),
+        'email' => $cliente->getEmail(),
+        'tel'=>$cliente->getTel()
+    ];
     header('Location: clientes_dashboard.php');
     exit();
 }

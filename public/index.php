@@ -29,7 +29,7 @@ if (!empty($_SESSION['errores'])) {
 $_SESSION['desde_index'] = true;
 
 // Comprobar si la instalación está completa
-if (!isset($_SESSION['instalacion_completada'])) {
+if (!isset($_SESSION['instalacion_completada']) && (!isset($config['instalacion_completada']) || $config['instalacion_completada'] === false)) {
     header('Location: ../config/install.php');
     exit();
 }

@@ -23,6 +23,62 @@ abstract class Persona {
     }
 
     /**
+     * Getter para ID.
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Setter para ID.
+     */
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    /**
+     * Getter para Nombre.
+     */
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    /**
+     * Setter para Nombre.
+     */
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * Getter para Usuario.
+     */
+    public function getUsuario() {
+        return $this->usuario;
+    }
+
+    /**
+     * Setter para Usuario.
+     */
+    public function setUsuario($usuario) {
+        $this->usuario = $usuario;
+    }
+
+    /**
+     * Getter para Password.
+     */
+    public function getPassword() {
+        return $this->password;
+    }
+
+    /**
+     * Setter para Password.
+     */
+    public function setPassword($password) {
+        $this->password = $password;
+    }
+
+    /**
      * Método para guardar o actualizar una persona en la base de datos.
      *
      * @param PDO $conexion Conexión PDO.

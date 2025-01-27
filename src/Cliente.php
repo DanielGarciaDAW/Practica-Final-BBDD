@@ -27,6 +27,34 @@ class Cliente extends Persona {
     }
 
     /**
+     * Getter para Email.
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+
+    /**
+     * Setter para Email.
+     */
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    /**
+     * Getter para Teléfono.
+     */
+    public function getTel() {
+        return $this->tel;
+    }
+
+    /**
+     * Setter para Teléfono.
+     */
+    public function setTel($tel) {
+        $this->tel = $tel;
+    }
+
+    /**
      * Guarda o actualiza un cliente en la base de datos.
      *
      * @param PDO $conexion Conexión a la base de datos.

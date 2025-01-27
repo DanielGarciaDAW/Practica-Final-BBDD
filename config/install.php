@@ -186,6 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             case 'terminar_instalacion':
                 // Guardar la configuración en el archivo config.php
                 actualizarConfiguracion('instalacion_completada', true, '../config.php');
+                $_SESSION['instalacion_completada'] = true;
 
                 // Limpiar la variable de sesión `desde_index`
                 $_SESSION['desde_index'] = null;

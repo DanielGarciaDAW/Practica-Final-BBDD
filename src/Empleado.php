@@ -24,6 +24,35 @@ class Empleado extends Persona {
     }
 
     /**
+     * Getter para fecha_contrato
+     */
+    public function getFechaContrato(): ?string
+    {
+        return $this->fecha_contrato;
+    }
+    /**
+     * Setter para fecha_contrato
+     */
+    public function setFechaContrato(?string $fecha_contrato): void
+    {
+        $this->fecha_contrato = $fecha_contrato;
+    }
+
+    /**
+     * Getter para puesto
+     */
+    public function getPuesto(): ?string{
+        return $this->puesto;
+    }
+
+    /**
+     * Setter para puesto
+     */
+    public function setPuesto(?string $puesto): void{
+        $this->puesto = $puesto;
+    }
+
+    /**
      * Guarda o actualiza un empleado en la base de datos.
      *
      * @param PDO $conexion Conexión a la base de datos.
