@@ -1,10 +1,10 @@
 <?php
 
-include '../includes/conexionBBDD.php';
-include '../src/Casa.php';
-include '../src/Habitacion.php';
-include '../src/Cliente.php';
+include_once '../includes/conexionBBDD.php';
+include_once '../includes/funciones.php';
 
+
+global $conexion;
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -16,20 +16,19 @@ if (!isset($_SESSION['cliente'])) {
 }
 
 // Conexión a la base de datos usando PDO
-try {
-    global $conexion;
-    // Obtener las casas de la base de datos
-    $stmtCasas = $conexion->prepare("SELECT * FROM casas");
-    $stmtCasas->execute();
-    $casas = $stmtCasas->fetchAll(PDO::FETCH_ASSOC);
-
-    // Obtener las habitaciones de la base de datos
-    $stmtHabitaciones = $conexion->prepare("SELECT * FROM habitaciones");
-    $stmtHabitaciones->execute();
-    $habitaciones = $stmtHabitaciones->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die("Error al conectarse con la base de datos: " . $e->getMessage());
+try{
+    $casas = recogerCasas($conexion);
+}catch (Exception $e){
+    error_log("[" . date("Y-m-d H:i:s") . "] " . $e->getMessage() . "\n", 3, "../logs/error_log.txt" );
+    echo "Ocurrió un problema al cargar las casas. Por favor, intenta nuevamente más tarde.";
 }
+try{
+    $habitaciones = recogerHabitaciones($conexion);
+}catch (Exception $e){
+    error_log("[" . date("Y-m-d H:i:s") . "] " . $e->getMessage() . "\n", 3, "../logs/error_log.txt" );
+    echo "Ocurrió un problema al cargar las habitaciones. Por favor, intenta nuevamente más tarde.";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -106,21 +105,23 @@ try {
 
 <aside>
     <input type="text" placeholder="Buscar casas...">
+    <button>Perfil</button>
     <button>Reservas</button>
     <button>Historial de Reservas</button>
 </aside>
 
 <main>
-    <h1>Casas disponibles</h1>
+    <h2>Casas disponibles</h2>
     <?php if (!empty($casas)): ?>
         <?php $hayCasas = false; ?>
         <?php foreach ($casas as $casa): ?>
             <?php if ($casa['disponible'] == 1): ?>
                 <div class="casa">
-                    <h2><?php echo htmlspecialchars($casa['nombre']); ?></h2>
+                    <h3><?php echo htmlspecialchars($casa['nombre']); ?></h3>
                     <p>Capacidad: <?php echo htmlspecialchars($casa['capacidad']); ?></p>
                     <p><strong>Precio: </strong> <?php echo htmlspecialchars(($casa['precio'])) ?> € por noche</p>
                     <form action="reservar.php" method="post">
+                        <input type="hidden" name="casa" value="casa">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($casa['id']); ?>">
                         <button type="submit" name="reservar_casa">Reservar</button>
                     </form>
@@ -134,16 +135,17 @@ try {
         <?php endif; ?>
     <?php endif; ?>
 
-    <h1>Habitaciones disponibles</h1>
+    <h2>Habitaciones disponibles</h2>
     <?php if (!empty($habitaciones)): ?>
         <?php $hayHabitaciones = false; ?>
         <?php foreach ($habitaciones as $habitacion): ?>
             <?php if ($habitacion['disponible'] == 1): ?>
                 <div class="habitacion">
-                    <h2><?php echo htmlspecialchars($habitacion['nombre']); ?></h2>
+                    <h3><?php echo htmlspecialchars($habitacion['nombre']); ?></h3>
                     <p>Capacidad: <?php echo htmlspecialchars($habitacion['capacidad']); ?></p>
                     <p><strong>Precio: </strong> <?php echo htmlspecialchars(($habitacion['precio'])) ?> € por noche</p>
                     <form action="reservar.php" method="post">
+                        <input type="hidden" name="habitacion" value="habitacion">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($habitacion['id']); ?>">
                         <button type="submit" name="reservar_habitacion">Reservar</button>
                     </form>

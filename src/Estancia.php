@@ -23,6 +23,86 @@ abstract class Estancia {
     }
 
     /**
+     * Obtiene el ID de la estancia.
+     * @return int|null
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Establece el ID de la estancia.
+     * @param int $id
+     */
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    /**
+     * Obtiene el nombre de la estancia.
+     * @return string|null
+     */
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    /**
+     * Establece el nombre de la estancia.
+     * @param string $nombre
+     */
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * Obtiene la disponibilidad de la estancia.
+     * @return bool
+     */
+    public function isDisponible() {
+        return $this->disponible;
+    }
+
+    /**
+     * Establece la disponibilidad de la estancia.
+     * @param bool $disponible
+     */
+    public function setDisponible($disponible) {
+        $this->disponible = $disponible;
+    }
+
+    /**
+     * Obtiene la capacidad máxima de la estancia.
+     * @return int|null
+     */
+    public function getCapacidad() {
+        return $this->capacidad;
+    }
+
+    /**
+     * Establece la capacidad máxima de la estancia.
+     * @param int $capacidad
+     */
+    public function setCapacidad($capacidad) {
+        $this->capacidad = $capacidad;
+    }
+
+    /**
+     * Obtiene el precio de la estancia.
+     * @return float|null
+     */
+    public function getPrecio() {
+        return $this->precio;
+    }
+
+    /**
+     * Establece el precio de la estancia.
+     * @param float $precio
+     */
+    public function setPrecio($precio) {
+        $this->precio = $precio;
+    }
+
+    /**
      * Guarda o actualiza una estancia en la base de datos.
      *
      * @param PDO $conexion Conexión a la base de datos.

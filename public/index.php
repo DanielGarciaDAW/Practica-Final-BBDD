@@ -3,8 +3,9 @@
 // Incluimos la configuración y conexión a la base de datos
 require_once '../config/config.php';
 require_once '../includes/conexionBBDD.php';
-include '../src/Casa.php';
-include '../src/Habitacion.php';
+require_once '../includes/funciones.php';
+include_once '../src/Casa.php';
+include_once '../src/Habitacion.php';
 
 global $conexion;
 
@@ -36,21 +37,16 @@ if (!isset($_SESSION['instalacion_completada']) && (!isset($config['instalacion_
 
 // Conexión a la base de datos usando PDO
 try {
-    // Obtener las casas de la base de datos
-    $stmtCasas = $conexion->prepare("SELECT * FROM casas");
-    $stmtCasas->execute();
-    $casas = $stmtCasas->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die("Error al conectarse con la base de datos: " . $e->getMessage());
+    $casas = recogerCasas($conexion);
+} catch (Exception $e) {
+    error_log("[" . date("Y-m-d H:i:s") . "] " . $e->getMessage() . "\n", 3, "../logs/error_log.txt");
+    echo "Ocurrió un problema al cargar las casas. Por favor, intenta nuevamente más tarde.";
 }
-
 try {
-    // Obtener las habitaciones de la base de datos
-    $stmtHabitaciones = $conexion->prepare("SELECT * FROM Habitaciones");
-    $stmtHabitaciones->execute();
-    $habitaciones = $stmtHabitaciones->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die ("Error al conectarse con la base de datos: " . $e->getMessage());
+    $habitaciones = recogerHabitaciones($conexion);
+} catch (Exception $e) {
+    error_log("[" . date("Y-m-d H:i:s") . "] " . $e->getMessage() . "\n", 3, "../logs/error_log.txt");
+    echo "Ocurrió un problema al cargar las habitaciones. Por favor, intenta nuevamente más tarde.";
 }
 ?>
 
@@ -166,31 +162,32 @@ try {
 <main>
     <div id="list-container">
         <!-- Contenedor para las casas y habitaciones -->
-        <h1>Casas disponibles</h1>
+        <h2>Casas disponibles</h2>
         <?php if (!empty($casas)): ?>
             <?php foreach ($casas as $casa): ?>
-                <?php if ($casa['disponible'] == 1): ?>
-                    <div class="casa">
-                        <h2><?php echo htmlspecialchars($casa['nombre']); ?></h2>
-                        <p>Capacidad: <?php echo htmlspecialchars($casa['capacidad']); ?></p>
-                        <p><strong>Precio: </strong> <?php echo htmlspecialchars($casa['precio']); ?>€</p>
-                    </div>
-                <?php endif; ?>
+
+                <div class="casa">
+                    <h3><?php echo htmlspecialchars($casa['nombre']); ?></h3>
+                    <p>Capacidad: <?php echo htmlspecialchars($casa['capacidad']); ?></p>
+                    <p><strong>Precio: </strong> <?php echo htmlspecialchars($casa['precio']); ?>€</p>
+                </div>
+
             <?php endforeach; ?>
         <?php else: ?>
             <p>No hay casas disponibles.</p>
         <?php endif; ?>
 
-        <h1>Habitaciones disponibles</h1>
+        <h2>Habitaciones disponibles</h2>
         <?php if (!empty($habitaciones)): ?>
             <?php foreach ($habitaciones as $habitacion): ?>
-                <?php if ($habitacion['disponible'] == 1): ?>
-                    <div class="casa">
-                        <h2><?php echo htmlspecialchars($habitacion['nombre']); ?></h2>
-                        <p>Capacidad: <?php echo htmlspecialchars($habitacion['capacidad']); ?></p>
-                        <p><strong>Precio: </strong> <?php echo htmlspecialchars($habitacion['precio']); ?>€ por noche</p>
-                    </div>
-                <?php endif; ?>
+
+                <div class="casa">
+                    <h3><?php echo htmlspecialchars($habitacion['nombre']); ?></h3>
+                    <p>Capacidad: <?php echo htmlspecialchars($habitacion['capacidad']); ?></p>
+                    <p><strong>Precio: </strong> <?php echo htmlspecialchars($habitacion['precio']); ?>€ por noche
+                    </p>
+                </div>
+
             <?php endforeach; ?>
         <?php else: ?>
             <p>No hay habitaciones disponibles.</p>

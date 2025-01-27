@@ -20,7 +20,6 @@ class Casa extends Estancia {
         parent::__construct($id, $nombre, $disponible, $capacidad, $precio);
     }
 
-
     /**
      * Guarda o actualiza una casa en la base de datos.
      *

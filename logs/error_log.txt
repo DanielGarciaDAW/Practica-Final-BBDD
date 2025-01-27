@@ -439,3 +439,7 @@ Stack trace:
 [2025-01-26 22:31:16] Este es un error de prueba.
 [2025-01-26 22:33:37] Este es un error de prueba.
 [2025-01-26 22:44:49] Este es un error de prueba.
+[2025-01-27 23:16:32] Error al recoger casas: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'casarural.casa' doesn't exist
+[2025-01-27 23:16:32] Error al recoger habitaciones: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'casarural.habitacion' doesn't exist
+[2025-01-27 23:16:51] Error al recoger casas: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'casarural.casa' doesn't exist
+[2025-01-27 23:16:51] Error al recoger habitaciones: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'casarural.habitacion' doesn't exist
