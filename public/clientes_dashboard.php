@@ -176,7 +176,7 @@ if (isset($_GET['reserva']) && $_GET['reserva'] === 'confirmada') {
                     <p>Capacidad: <?php echo htmlspecialchars($casa['capacidad']); ?></p>
                     <p><strong>Precio: </strong> <?php echo htmlspecialchars(($casa['precio'])) ?> € por noche</p>
                     <form action="reservar.php" method="post">
-                        <input type="hidden" name="casa" value="casa">
+                        <input type="hidden" name="tipo" value="casa">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($casa['id']); ?>">
                         <button type="submit" name="reservar_casa">Reservar</button>
                     </form>
@@ -200,7 +200,7 @@ if (isset($_GET['reserva']) && $_GET['reserva'] === 'confirmada') {
                     <p>Capacidad: <?php echo htmlspecialchars($habitacion['capacidad']); ?></p>
                     <p><strong>Precio: </strong> <?php echo htmlspecialchars(($habitacion['precio'])) ?> € por noche</p>
                     <form action="reservar.php" method="post">
-                        <input type="hidden" name="habitacion" value="habitacion">
+                        <input type="hidden" name="tipo" value="habitacion">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($habitacion['id']); ?>">
                         <button type="submit" name="reservar_habitacion">Reservar</button>
                     </form>

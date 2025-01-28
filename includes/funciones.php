@@ -66,44 +66,37 @@ function recogerHabitacion($conexion, $id){
 
 function procesarReserva($conexion, $idCliente, $fechaInicio, $fechaFin, $tipoEstancia, $idEstancia, $precioPorNoche, $dias) {
     try {
+        // Calcular precio total
+        $precioTotal = $precioPorNoche * $dias;
+
+        // Determinar la columna de estancia a insertar
+        $columnaEstancia = ($tipoEstancia === 'casa') ? 'id_casa' : 'id_habitacion';
+
         // Iniciar una transacción para garantizar consistencia
         $conexion->beginTransaction();
 
-        // Insertar la reserva en la tabla `reservas`
+        // Insertar la reserva en la tabla `reservas` con la estancia correspondiente
         $sqlInsertReserva = "
-            INSERT INTO reservas (id_cliente, fecha_reserva, fecha_inicio, fecha_fin, estado)
-            VALUES (:id_cliente, NOW(), :fecha_inicio, :fecha_fin, 'Confirmada')
+            INSERT INTO reservas (id_cliente, $columnaEstancia, fecha_reserva, fecha_inicio, fecha_fin, estado, precio_total)
+            VALUES (:id_cliente, :id_estancia, NOW(), :fecha_inicio, :fecha_fin, 'Confirmada', :precio_total)
         ";
+
         $stmt = $conexion->prepare($sqlInsertReserva);
         $stmt->execute([
-            ':id_cliente' => $idCliente,
-            ':fecha_inicio' => $fechaInicio,
-            ':fecha_fin' => $fechaFin
+            ':id_cliente' => $idCliente,      // ID del cliente que realiza la reserva
+            ':id_estancia' => $idEstancia,   // ID de la casa o habitación
+            ':fecha_inicio' => $fechaInicio, // Fecha de inicio de la reserva
+            ':fecha_fin' => $fechaFin,       // Fecha de fin de la reserva
+            ':precio_total' => $precioTotal  // Precio total de la reserva
         ]);
 
         // Obtener el ID de la reserva recién creada
         $idReserva = $conexion->lastInsertId();
 
-        //Calcular precio total
-        $precioTotal = $precioPorNoche * $dias;
-
-        // Insertar la relación entre la reserva y la casa o habitación con el precio total
-        $sqlInsertRelacion = "
-            INSERT INTO reservas_casas_habitaciones (id_reserva, id_casa, id_habitacion, precio)
-            VALUES (:id_reserva, :id_casa, :id_habitacion, :precio)
-        ";
-
-        $stmtRelacion = $conexion->prepare($sqlInsertRelacion);
-        $stmtRelacion->execute([
-            ':id_reserva' => $idReserva,
-            ':id_casa' => $tipoEstancia === 'casa' ? $idEstancia : null,
-            ':id_habitacion' => $tipoEstancia === 'habitacion' ? $idEstancia : null,
-            ':precio' => $precioTotal // Precio total calculado
-        ]);
-
         // Confirmar la transacción
         $conexion->commit();
 
+        // Guardar los datos de la reserva en la sesión para confirmación
         $_SESSION['reserva'] = [
             'id_reserva' => $idReserva,
             'tipo_estancia' => $tipoEstancia,
@@ -117,7 +110,9 @@ function procesarReserva($conexion, $idCliente, $fechaInicio, $fechaFin, $tipoEs
             'nombre_cliente' => $_SESSION['cliente']['nombre']
         ];
 
-        return $idReserva; // Devolver el ID de la reserva para confirmar su éxito
+        // Devolver el ID de la reserva para confirmar su éxito
+        return $idReserva;
+
     } catch (PDOException $e) {
         // Revertir la transacción en caso de error
         $conexion->rollBack();
@@ -125,6 +120,43 @@ function procesarReserva($conexion, $idCliente, $fechaInicio, $fechaFin, $tipoEs
         return false; // Indicar que ocurrió un error
     }
 }
+
+
+function obtenerFechasReservadas($conexion, $idEstancia, $tipoEstancia) {
+    try {
+        // Determinar la columna a filtrar
+        $columnaEstancia = ($tipoEstancia === 'casa') ? 'id_casa' : 'id_habitacion';
+
+        // Consulta para obtener las fechas reservadas
+        $query = "
+            SELECT fecha_inicio, fecha_fin 
+            FROM reservas
+            WHERE $columnaEstancia = :idEstancia
+              AND estado = 'Confirmada'
+        ";
+
+        $stmt = $conexion->prepare($query);
+        $stmt->execute([':idEstancia' => $idEstancia]);
+
+        $fechas = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $fechaInicio = new DateTime($row['fecha_inicio']);
+            $fechaFin = new DateTime($row['fecha_fin']);
+
+            // Generar todas las fechas del rango
+            while ($fechaInicio <= $fechaFin) {
+                $fechas[] = $fechaInicio->format('Y-m-d');
+                $fechaInicio->modify('+1 day');
+            }
+        }
+
+        return $fechas;
+    } catch (PDOException $e) {
+        error_log("Error al obtener las fechas reservadas: " . $e->getMessage());
+        return [];
+    }
+}
+
 
 
 

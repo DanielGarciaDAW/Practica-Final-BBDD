@@ -110,44 +110,28 @@ function inicializarBaseDeDatos() {
     try {
         echo '<script>console.log("Creando Tabla Reservas");</script>';
         $sqlReservas = "
-            CREATE TABLE IF NOT EXISTS reservas (
-                id INT AUTO_INCREMENT PRIMARY KEY,   -- Identificador único
-                id_cliente INT NOT NULL,                    -- Relación con cliente
-                id_empleado INT,                  -- Relación con empleado que gestiona la reserva
-                fecha_reserva DATETIME NOT NULL,            -- Fecha y hora de reserva
-                fecha_inicio DATE NOT NULL,                 -- Fecha de inicio
-                fecha_fin DATE NOT NULL,                    -- Fecha de fin
-                estado ENUM('Pendiente', 'Confirmada', 'Cancelada') DEFAULT 'Pendiente', -- Estado de reserva
-                FOREIGN KEY (id_cliente) REFERENCES clientes(id),
-                FOREIGN KEY (id_empleado) REFERENCES empleados(id)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-        ";
+        CREATE TABLE reservas (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        id_cliente INT NOT NULL,
+        id_casa INT DEFAULT NULL,         -- Relación con casas (opcional)
+        id_habitacion INT DEFAULT NULL,   -- Relación con habitaciones (opcional)
+        fecha_reserva DATETIME NOT NULL,
+        fecha_inicio DATE NOT NULL,
+        fecha_fin DATE NOT NULL,
+        precio_total DECIMAL(10, 2) NOT NULL, -- Precio total de la reserva
+        estado ENUM('Pendiente', 'Confirmada', 'Cancelada') DEFAULT 'Pendiente',
+        FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+        FOREIGN KEY (id_casa) REFERENCES casas(id),
+        FOREIGN KEY (id_habitacion) REFERENCES habitaciones(id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    ";
+
         $conexion->query($sqlReservas);
-        echo '<script>console.log("Tabla Reservas creada");</script>';
+        echo '<script>console.log("Tabla Reservas creada correctamente");</script>';
     } catch (PDOException $e) {
         error_log("[" . date("Y-m-d H:i:s") . "] Error en tabla Reservas: " . $e->getMessage() . "\n", 3, __DIR__ . '/../logs/error_log.txt');
     }
 
-    // Creación de la tabla `reservas_casas_habitaciones`
-    try {
-        echo '<script>console.log("Creando Tabla reservas-casas-habitaciones");</script>';
-        $sqlReservaCasasHabitaciones = "
-            CREATE TABLE IF NOT EXISTS reservas_casas_habitaciones (
-                id INT AUTO_INCREMENT PRIMARY KEY,        -- Identificador único
-                id_reserva INT NOT NULL,                  -- Relación con reserva
-                id_casa INT DEFAULT NULL,                 -- Relación con casa
-                id_habitacion INT DEFAULT NULL,           -- Relación con habitación
-                precio INT NOT NULL,                      -- precio noche
-                FOREIGN KEY (id_reserva) REFERENCES reservas(id),
-                FOREIGN KEY (id_casa) REFERENCES casas(id),
-                FOREIGN KEY (id_habitacion) REFERENCES habitaciones(id)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-        ";
-        $conexion->query($sqlReservaCasasHabitaciones);
-        echo '<script>console.log("Tabla reservas-casas-habitaciones creada");</script>';
-    } catch (PDOException $e) {
-        error_log("[" . date("Y-m-d H:i:s") . "] Error en tabla reservas-casas-habitaciones: " . $e->getMessage() . "\n", 3, __DIR__ . '/../logs/error_log.txt');
-    }
 }
 
 // Llamada a la función para inicializar la base de datos
