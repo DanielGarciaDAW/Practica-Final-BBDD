@@ -177,17 +177,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Obtener las fechas seleccionadas
                 const fechaInicio = info.startStr;
                 const fechaFinAjustada = new Date(info.end);
-                fechaFinAjustada.setDate(fechaFinAjustada.getDate() - 1);
                 const fechaFinStr = fechaFinAjustada.toISOString().split('T')[0];
 
+
+
                 // Calcular los días reservados
-                const diasReservados = Math.ceil((fechaFinAjustada - new Date(info.start)) / (1000 * 60 * 60 * 24)) + 1;
+                const diasReservados = Math.ceil((fechaFinAjustada - new Date(info.start)) / (1000 * 60 * 60 * 24));
 
                 // Obtener el precio por noche desde PHP
                 const precioPorNoche = <?php echo json_encode($_SESSION['estancia']['precio'] ?? 0); ?>;
 
+
                 // Calcular el precio total
                 const precioTotal = diasReservados * precioPorNoche;
+
 
                 // Mostrar el precio total en el elemento correspondiente
                 document.getElementById('precio_total').textContent =

@@ -26,15 +26,8 @@ $idCliente = $_SESSION['cliente']['id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fechaInicio = filter_input(INPUT_POST, 'fecha_inicio',FILTER_SANITIZE_STRING ); // Fecha de inicio
+    $fechaFin = filter_input(INPUT_POST, 'fecha_fin', FILTER_SANITIZE_STRING); // Fecha de fin ya enviada
     $dias = filter_input(INPUT_POST, 'dias', FILTER_VALIDATE_INT); // Número de días
-
-    if (!$fechaInicio || !$dias || $dias < 1){
-        header('Location: reservar.php');
-        exit();
-    }
-
-    //Calcular la fecha de fin y el precio total
-    $fechaFin = date("Y-m-d", strtotime($fechaInicio . "+" . $dias . " days"));
 
     // Llamar a la función para procesar la reserva
     try{

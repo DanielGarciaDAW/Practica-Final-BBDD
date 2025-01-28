@@ -449,3 +449,8 @@ Stack trace:
 [2025-01-28 23:48:50] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
 [2025-01-28 23:48:54] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
 [2025-01-28 23:48:54] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
+[2025-01-29 00:15:27] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
+[2025-01-29 00:15:45] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
+[2025-01-29 00:15:45] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
+[2025-01-29 00:15:58] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
+[2025-01-29 00:15:58] Error en tabla Reservas: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'reservas' already exists
