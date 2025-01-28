@@ -10,10 +10,11 @@ echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 
-if (!isset($_SESSION['estancia'])){
+if (!isset($_SESSION['estancia'])) {
     header('Location: clientes_dashboard.php');
     exit();
 }
+
 
 //Recuperamos los datos de la estancia seleccionada desde la sesión
 $estanciaData = $_SESSION['estancia']; // Array con información de la estancia
@@ -22,9 +23,8 @@ $tipoEstancia = $estanciaData['tipo']; // Tipo: 'casa' o 'habitacion'
 $precioPorNoche = $estanciaData['precio']; // Precio por noche
 $idCliente = $_SESSION['cliente']['id'];
 
-//hasta aquí también
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $fechaInicio = filter_input(INPUT_POST, 'fecha_inicio',FILTER_SANITIZE_STRING ); // Fecha de inicio
     $dias = filter_input(INPUT_POST, 'dias', FILTER_VALIDATE_INT); // Número de días
 
@@ -64,6 +64,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: reservar.php');
         exit();
     }
-
-
 }

@@ -137,6 +137,7 @@ function inicializarBaseDeDatos() {
                 id_reserva INT NOT NULL,                  -- Relación con reserva
                 id_casa INT DEFAULT NULL,                 -- Relación con casa
                 id_habitacion INT DEFAULT NULL,           -- Relación con habitación
+                precio INT NOT NULL,                      -- precio noche
                 FOREIGN KEY (id_reserva) REFERENCES reservas(id),
                 FOREIGN KEY (id_casa) REFERENCES casas(id),
                 FOREIGN KEY (id_habitacion) REFERENCES habitaciones(id)

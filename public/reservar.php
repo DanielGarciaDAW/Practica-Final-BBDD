@@ -7,34 +7,49 @@ include_once '../src/Reserva.php';
 
 global $conexion;
 
-echo "¡Bienvenido a reservas!";
+echo "<h2>¡Bienvenido a reservas!</h2>";
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
     if (isset($_POST['casa'])) {
         $estancia = recogerCasa($conexion, $_POST['id']);
+
+        if (!$estancia) {
+            header("Location: clientes_dashboard.php?error=no_casa");
+            exit();
+        }
         $tipo = 'casa';
     } elseif (isset($_POST['habitacion'])) {
         $estancia = recogerHabitacion($conexion, $_POST['id']);
+
+        if (!$estancia) {
+            header("Location: clientes_dashboard.php?error=no_habitacion");
+            exit();
+        }
         $tipo = 'habitacion';
     }
+    //Guardar la estancia en la sesión.
+    if(isset($estancia)){
+        $_SESSION['estancia'] = [
+            'tipo' => $tipo,
+            'id' => $estancia->getId(),
+            'nombre' => $estancia->getNombre(),
+            'disponible'=> $estancia->isDisponible(),
+            'capacidad' => $estancia->getCapacidad(),
+            'precio' => $estancia->getPrecio()
+        ];
 
-    $_SESSION['estancia'] = [
-        'tipo' => $tipo,
-        'id' => $estancia->getId(),
-        'nombre' => $estancia->getNombre(),
-        'disponible'=> $estancia->isDisponible(),
-        'capacidad' => $estancia->getCapacidad(),
-        'precio' => $estancia->getPrecio()
-    ];
-
-    // Si es una habitación, guardamos también el número de habitación
-    if ($tipo === 'habitacion') {
-        $_SESSION['estancia']['numero_habitacion'] = $estancia->getNumeroHabitacion();
+        // Si es una habitación, guardamos también el número de habitación
+        if ($tipo === 'habitacion') {
+            $_SESSION['estancia']['numero_habitacion'] = $estancia->getNumeroHabitacion();
+        }
     }
+
 } else {
     echo "No se encontró la estancia seleccionada.";
 }
@@ -50,21 +65,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reservar</title>
 </head>
-<body>
-<?php if ($estancia instanceof Casa): ?>
+<?php if (isset($estancia) && $estancia instanceof Casa): ?>
     <h2>Reservar Casa</h2>
     <p>Has seleccionado la casa: <?php echo htmlspecialchars($estancia->getNombre()); ?></p>
     <p>Precio por noche: <?php echo htmlspecialchars($estancia->getPrecio()); ?> €</p>
     <form action="procesar_reserva.php" method="post">
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($estancia->getId()); ?>">
         <label for="dias">¿Cuántos días quieres reservar?</label>
-        <input type="number" id="dias" name="dias" min="1" required>
+        <input type="number" id="dias" name="dias" min="1" required></br>
+        <label for="fecha_inicio">Fecha de inicio</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" required min="<?php echo date('Y-m-d'); ?>"></br>
         <button type="submit" name="confirmar_reserva_casa">Reservar Casa</button>
     </form>
     <form action="clientes_dashboard.php" method="get">
         <button type="submit">Cancelar Reserva</button>
     </form>
-<?php elseif ($estancia instanceof Habitacion): ?>
+<?php elseif (isset($estancia) && $estancia instanceof Habitacion): ?>
     <h2>Reservar Habitación</h2>
     <p>Has seleccionado la habitación: <?php echo htmlspecialchars($estancia->getNombre()); ?></p>
     <p>Precio por noche: <?php echo htmlspecialchars($estancia->getPrecio()); ?> €</p>
@@ -72,6 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($estancia->getId()); ?>">
         <label for="dias">¿Cuántos días quieres reservar?</label>
         <input type="number" id="dias" name="dias" min="1" required>
+        <label for="fecha_inicio">Fecha de inicio</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" required min="<?php echo date('Y-m-d'); ?>"></br>
         <button type="submit" name="confirmar_reserva_habitacion">Reservar habitación</button>
     </form>
     <form action="clientes_dashboard.php" method="get">

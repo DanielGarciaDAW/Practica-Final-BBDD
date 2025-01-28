@@ -28,6 +28,50 @@ try{
     error_log("[" . date("Y-m-d H:i:s") . "] " . $e->getMessage() . "\n", 3, "../logs/error_log.txt" );
     echo "Ocurrió un problema al cargar las habitaciones. Por favor, intenta nuevamente más tarde.";
 }
+// Si la reserva se hizo con éxito aparece una alert con el mensaje
+if (isset($_GET['reserva']) && $_GET['reserva'] === 'confirmada') {
+    $idReserva = isset($_GET['id_reserva']) ? intval($_GET['id_reserva']) : null;
+
+    // Datos adicionales de la estancia (puedes adaptarlo según lo que tienes en $_SESSION o la base de datos)
+    $estancia = $_SESSION['estancia']; // Asegúrate de que la sesión tiene estos datos
+    $nombreEstancia = $estancia['nombre'];
+    $fechaInicio = $_SESSION['fecha_inicio']; // Si se guarda en sesión
+    $fechaFin = $_SESSION['fecha_fin'];       // Si se guarda en sesión
+    $precioPorNoche = $estancia['precio'];
+    $diasReservados = (strtotime($fechaFin) - strtotime($fechaInicio)) / 86400; // Calcula los días
+    $precioTotal = $precioPorNoche * $diasReservados;
+
+    if (isset($_SESSION['reserva'])) {
+        $reserva = $_SESSION['reserva'];
+        echo "<script>
+        const mensaje = `
+        ¡Reserva confirmada!
+        Cliente: {$reserva['nombre_cliente']}
+        Estancia: {$reserva['nombre_estancia']}
+        Tipo: {$reserva['tipo_estancia']}
+        Fecha de inicio: {$reserva['fecha_inicio']}
+        Fecha de fin: {$reserva['fecha_fin']}
+        Precio por noche: {$reserva['precio_por_noche']} €
+        Precio total: {$reserva['precio_total']} €
+        ID de la Reserva: {$reserva['id_reserva']}
+        Gracias por tu reserva.`;
+        
+        const usuarioAcepta = confirm(mensaje);
+        // Eliminar los parámetros GET después de cerrar el alert
+            if(usuarioAcepta){
+                const nuevaURL = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, nuevaURL);
+                // Recargar la página después de cerrar el alert
+                location.reload();
+            }
+    </script>";
+    } else {
+        echo "<script>
+            const mensaje = `Error: No se pudo confirmar la reserva.\nPor favor, inténtalo de nuevo.`;
+            alert(mensaje);
+        </script>";
+    }
+}
 
 ?>
 
@@ -111,6 +155,17 @@ try{
 </aside>
 
 <main>
+    <?php if (isset($_GET['error'])): ?>
+        <p style="color: red;">
+            <?php
+            if ($_GET['error'] === 'no_casa') {
+                echo "Error: La casa seleccionada no está disponible.";
+            } elseif ($_GET['error'] === 'no_habitacion') {
+                echo "Error: La habitación seleccionada no está disponible.";
+            }
+            ?>
+        </p>
+    <?php endif; ?>
     <h2>Casas disponibles</h2>
     <?php if (!empty($casas)): ?>
         <?php $hayCasas = false; ?>
