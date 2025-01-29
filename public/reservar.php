@@ -95,8 +95,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
 
     <style>
+        *{
+            box-sizing: border-box;
+        }
         #calendar {
-            max-width: 900px;
+            max-width: 600px;
             margin: 20px auto;
             padding: 10px;
             border: 1px solid #ddd;
